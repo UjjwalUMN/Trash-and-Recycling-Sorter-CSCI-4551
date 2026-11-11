@@ -1,6 +1,6 @@
 from setuptools import find_packages, setup
 
-package_name = 'sorter_perception'
+package_name = 'trash_sorter'
 
 setup(
     name=package_name,
