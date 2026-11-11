@@ -11,7 +11,7 @@ A ROS 2 simulation of a robot that sorts waste items into recycling, organic, an
 - TurtleBot3 packages
 ## Environment Setup
  
-Add these lines to the end of `~/.bashrc`, skipping any that are already there (Should be already done through labs)
+Add these lines to the end of `~/.bashrc`, skipping any that are already there:
  
 ```bash
 source /opt/ros/jazzy/setup.bash
@@ -19,7 +19,7 @@ export ROS_AUTOMATIC_DISCOVERY_RANGE=LOCALHOST
 unset ROS_DOMAIN_ID
 export TURTLEBOT3_MODEL=waffle
 ```
-note: model could also be burger
+Note: Model could be burger also.
  
 Then open a new terminal.
  
@@ -53,7 +53,18 @@ source install/local_setup.bash
 Check that the packages are found:
  
 ```bash
-ros2 pkg list
+ros2 pkg list | grep trash_sorter
 ```
  
-You should see `sorter_bringup`, `sorter_manipulation`, `sorter_navigation`, and `sorter_perception`.
+You should see `trash_sorter`.
+ 
+## Layout
+ 
+All project code lives in one package, `src/trash_sorter/`:
+ 
+- `trash_sorter/`: Python nodes (perception, manipulation, navigation, coordinator)
+- `launch/`: launch files
+- `worlds/`, `models/`: Gazebo world, bins, and waste items
+- `maps/`: maps built with SLAM
+- `config/`: Nav2 and other parameters
+- `rviz/`: RViz configuration
