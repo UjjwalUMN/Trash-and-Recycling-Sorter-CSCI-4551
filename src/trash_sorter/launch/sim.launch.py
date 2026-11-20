@@ -41,9 +41,24 @@ def generate_launch_description():
         output='screen'
     )
 
+    can_sdf = os.path.join(models_path, 'can', 'model.sdf')
+    spawn_can = Node(
+    package='ros_gz_sim',
+    executable='create',
+    arguments=[
+        '-world', 'empty',
+        '-name', 'soda_can_1',
+        '-file', can_sdf,
+        '-x', '-2.4095',
+        '-y', '13.39',
+        '-z', '3.275',
+    ],
+    output='screen'
+)
+
     delayed_spawn = TimerAction(
         period=3.0,
-        actions=[spawn_model]
+        actions=[spawn_model, spawn_can]
     )
 
     return LaunchDescription([

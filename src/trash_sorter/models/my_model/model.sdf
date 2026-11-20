@@ -1,8 +1,15 @@
 <?xml version="1.0" ?>
 <sdf version="1.8">
-  <model name="my_model">
-    <static>true</static>
+  <model name="test">
     <link name="testlink">
+      <collision name="table_collision">
+        <pose>-2.4095 13.39 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.576 0.46 2.77</size>
+          </box>
+        </geometry>
+      </collision>
       <visual name="Cube.001">
         <geometry>
           <mesh>
