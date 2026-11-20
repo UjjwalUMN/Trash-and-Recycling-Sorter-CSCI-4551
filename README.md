@@ -57,6 +57,13 @@ ros2 pkg list | grep trash_sorter
 ```
  
 You should see `trash_sorter`.
+
+## Launching Gazebo Environment
+
+```bash
+colcon build --packages-select trash_sorter
+source install/setup.bash
+ros2 launch trash_sorter sim.launch.py
  
 ## Layout
  
