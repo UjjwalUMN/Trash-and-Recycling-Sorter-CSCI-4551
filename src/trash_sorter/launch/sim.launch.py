@@ -106,9 +106,34 @@ def generate_launch_description():
         actions=[spawn_robot] + spawn_colored_trash
     )
 
+    bridge = Node(
+        package='ros_gz_bridge',
+        executable='parameter_bridge',
+        arguments=['--ros-args', '-p', 'config_file:=' + os.path.join(
+            tb3_share, 'params', 'turtlebot3_waffle_bridge.yaml')],
+        output='screen'
+    )
+
+    camera_bridge = Node(
+        package='ros_gz_image',
+        executable='image_bridge',
+        arguments=['/camera/image_raw'],
+        output='screen'
+    )
+
+    robot_state_publisher = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            os.path.join(tb3_share, 'launch', 'robot_state_publisher.launch.py')
+        ),
+        launch_arguments={'use_sim_time': 'true'}.items()
+    )
+
     return LaunchDescription([
         set_gz_resource_path,
         gz_sim,
         delayed_spawn,
         delayed_robot_spawn,
+        bridge,
+        camera_bridge,
+        robot_state_publisher
     ])

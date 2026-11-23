@@ -15,6 +15,13 @@
   <depend>launch</depend>
   <depend>launch_ros</depend>
 
+  <!-- Perception (used for perception) -->
+  <exec_depend>ros_gz_sim</exec_depend>
+  <exec_depend>ros_gz_bridge</exec_depend>
+  <exec_depend>ros_gz_image</exec_depend>
+  <exec_depend>python3-opencv</exec_depend>
+  <exec_depend>python3-numpy</exec_depend>
+
   <!-- Simulation (used by launch/sim.launch.py) -->
   <exec_depend>turtlebot3_gazebo</exec_depend>
 
