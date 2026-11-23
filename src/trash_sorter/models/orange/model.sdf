@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<!-- Mesh and texture: "Orange" by Adwait Naik, from Gazebo Fuel.
+     Collision, inertia and folder layout edited for this project. -->
+<sdf version="1.8">
+  <model name="orange">
+    <static>false</static>
+    <link name="link">
+      <!-- The mesh is not centred on its origin; its centre is at this pose. -->
+      <inertial>
+        <pose>-0.0069 -0.0184 0.0354 0 0 0</pose>
+        <mass>0.15</mass>
+        <inertia>
+          <!-- solid sphere: 2/5 * m * r^2 -->
+          <ixx>0.0000778</ixx><iyy>0.0000778</iyy><izz>0.0000778</izz>
+          <ixy>0</ixy><ixz>0</ixz><iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <pose>-0.0069 -0.0184 0.0354 0 0 0</pose>
+        <geometry>
+          <sphere><radius>0.036</radius></sphere>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh><uri>model://orange/meshes/textured.obj</uri></mesh>
+        </geometry>
+        <!-- Solid color instead of the texture (no .mtl / .png needed) -->
+        <material>
+          <ambient>0.0 0.8 0.0 1</ambient>
+          <diffuse>0.0 0.8 0.0 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

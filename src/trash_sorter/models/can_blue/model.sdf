@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<sdf version="1.8">
+  <model name="can_blue">
+    <static>false</static>
+    <link name="can_link">
+      <inertial>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.00033</ixx>
+          <iyy>0.00033</iyy>
+          <izz>0.00015</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <cylinder>
+            <radius>0.054</radius>
+            <length>0.176</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <cylinder>
+            <radius>0.054</radius>
+            <length>0.176</length>
+          </cylinder>
+        </geometry>
+        <material>
+          <ambient>0.0 0.0 0.8 1</ambient>
+          <diffuse>0.0 0.0 0.8 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

@@ -76,3 +76,9 @@ All project code lives in one package, `src/trash_sorter/`:
 - `maps/`: maps built with SLAM
 - `config/`: Nav2 and other parameters
 - `rviz/`: RViz configuration
+
+
+## Outside Resources
+Some models used in this simulation come from: app.gazebosim.org
+- https://app.gazebosim.org/GoogleResearch/fuel/models/Tory_Burch_Kiernan_Riding_Boot
+- https://app.gazebosim.org/Gambit/fuel/models/Orange

@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<!-- Model: "Tory Burch Kiernan Riding Boot", Google Scanned Objects,
+     Copyright 2020 Google LLC, CC BY 4.0. Collision/inertia/material edited. -->
+<sdf version="1.8">
+  <model name="boot">
+    <static>false</static>
+    <link name="link">
+      <inertial>
+        <pose>0 0 0.148 0 0 0</pose>
+        <mass>0.8</mass>
+        <inertia>
+          <ixx>0.0109</ixx><iyy>0.0065</iyy><izz>0.0057</izz>
+          <ixy>0</ixy><ixz>0</ixz><iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <pose>0 0 0.148 0 0 0</pose>
+        <geometry>
+          <box><size>0.10 0.275 0.296</size></box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh><uri>model://boot/meshes/model.obj</uri></mesh>
+        </geometry>
+        <!-- Overrides the dark leather texture with a solid color so perception
+             can see it. Delete this block to get the real texture back. -->
+        <material>
+          <ambient>0.8 0.0 0.0 1</ambient>
+          <diffuse>0.8 0.0 0.0 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

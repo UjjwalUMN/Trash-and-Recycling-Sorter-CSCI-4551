@@ -3,16 +3,20 @@
 <package format="3">
   <name>trash_sorter</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
+  <description>Trash and recycling sorter robot (CSCI 4551)</description>
   <maintainer email="raghu099@umn.edu">raghu099</maintainer>
   <license>TODO: License declaration</license>
 
+  <!-- Original dependencies -->
   <depend>rclpy</depend>
   <depend>sensor_msgs</depend>
   <depend>geometry_msgs</depend>
   <depend>tf2_ros</depend>
   <depend>launch</depend>
   <depend>launch_ros</depend>
+
+  <!-- Simulation (used by launch/sim.launch.py) -->
+  <exec_depend>turtlebot3_gazebo</exec_depend>
 
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
