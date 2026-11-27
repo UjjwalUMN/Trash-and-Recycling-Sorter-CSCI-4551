@@ -66,6 +66,27 @@ source install/setup.bash
 ros2 launch trash_sorter sim.launch.py
 ```
  
+## Running Perception
+
+The perception node watches the robot's camera and reports which colored items it sees and where they are in the image.
+
+Start the simulation first (see above). Then, in a second terminal:
+
+```bash
+cd ~/sorter_ws
+source install/local_setup.bash
+ros2 run trash_sorter perception
+```
+
+For each camera image it prints the color of every item it finds and the pixel where the item touches the table (column, row), for example:
+
+```
+[INFO] [perception]: red at pixel (210, 495)
+[INFO] [perception]: green at pixel (1162, 463)
+```
+
+Colors detected: red, green, blue, magenta. The color ranges are in `COLORS` at the top of `src/trash_sorter/trash_sorter/perception.py`.
+
 ## Layout
  
 All project code lives in one package, `src/trash_sorter/`:
@@ -76,7 +97,6 @@ All project code lives in one package, `src/trash_sorter/`:
 - `maps/`: maps built with SLAM
 - `config/`: Nav2 and other parameters
 - `rviz/`: RViz configuration
-
 
 ## Outside Resources
 Some models used in this simulation come from: app.gazebosim.org
